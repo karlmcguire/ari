@@ -9,7 +9,9 @@ func ARI(text string) int {
 	var (
 		chars = float64(charCount(text))
 		words = float64(strings.Count(text, " "))
-		sente = float64(strings.Count(text, "."))
+		sente = float64(strings.Count(text, ".") + strings.Count(text, "!") +
+			strings.Count(text, "?"),
+		)
 	)
 
 	return int(
